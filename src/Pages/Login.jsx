@@ -22,7 +22,7 @@ export const Login = () => {
                     <input type='email' placeholder='Enter The Email' className='w-56 p-2'/>
                 </div>
                 <div>
-                    <input type='password' placeholder='Enter The Password' className='w-56 p-2'/>
+                    <input type='password' placeholder='Enter The Password' className='w-56 p-2 '/>
                 </div>
                 <button onClick={navitoHome} className='bg-blue-800 p-3 w-56 rounded-xl hover:bg-fuchsia-950 text-white font-bold'>Sign In</button>
                 <div>

@@ -1,7 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 
 export const Register = () => {
+    const navigate=useNavigate();
+    const navitoLogin=()=>{
+        navigate('/');
+    }
   return (
     <div className='bg-slate-700 h-screen'>
         <div className='flex justify-center items-center pt-28'>
@@ -24,7 +28,7 @@ export const Register = () => {
                 <div>
                     <input type='password' placeholder='Enter The Confirm Password' className='w-56 p-2'/>
                 </div>
-                <button className='bg-blue-800 p-3 w-56 rounded-xl hover:bg-fuchsia-950 text-white font-bold'>Sign Up</button>
+                <button onClick={navitoLogin} className='bg-blue-800 p-3 w-56 rounded-xl hover:bg-fuchsia-950 text-white font-bold'>Sign Up</button>
                 <div>
                     <span className='text-base font-semibold'>You Have An Account? </span>
                     <Link className='text-base font-semibold text-blue-700 hover:text-blue-950 hover:underline' to="/">
