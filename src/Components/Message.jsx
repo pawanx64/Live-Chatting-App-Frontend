@@ -18,7 +18,7 @@ export const Message = () => {
     setEmojiSelect(!EmojiSelect);
   };
   return (
-    <div className='grid grid-rows-3'>
+    <div className='grid grid-rows-[70px_minmax(400px,_1fr)_100px] '>
         <div className=''>
           <div className='flex w-[60vw]  pt-5 pb-5'>
               <div className='flex w-[60vw] justify-between item-center gap-1 ml-10 mr-10 items-center'>
@@ -30,20 +30,20 @@ export const Message = () => {
               </div>
             </div>
             <div className='bg-yellow-300 ml-2 mr-2 rounded-lg h-1 '></div>
-          </div>
+        </div>
         <div className=''>
             
         </div>
-        <div className=''>
-            <div className='flex'>
-                <div className='emoji'>
-                      <div className=''>
-                          <FaRegSmileWink onClick={handleEmojiShow}/>
+        <div className='flex justify-center items-center '>
+            <div className='flex gap-4 '>
+                <div className='flex justify-center items-center'>
+                      <div className='border-2 rounded-full border-yellow-400'>
+                          <FaRegSmileWink onClick={handleEmojiShow} size={25} className='bg-yellow-400 rounded-full'/>
                       </div>
                 </div>
-                <form className=''>
-                      <input type="text" placeholder='Type Your Message Here'/>
-                      <button type="submit"><IoSend /></button>
+                <form className='flex justify-around items-center gap-4'>
+                      <input type="text" placeholder='Type Your Message Here' className='w-[50vw] h-4 p-4 rounded-xl'/>
+                      <button type="submit"><IoSend  size={25} className='text-white'/></button>
                 </form>
             </div>
         </div>
