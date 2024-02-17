@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { FaPowerOff } from "react-icons/fa";
 import EmojiPicker from 'emoji-picker-react';
 import { IoSend } from "react-icons/io5";
-import { FaRegSmileWink } from "react-icons/fa";
+import { FaRegSmile } from "react-icons/fa";
 
 export const Message = () => {
   
@@ -36,14 +36,13 @@ export const Message = () => {
         </div>
         <div className='flex justify-center items-center '>
             <div className='flex gap-4 '>
-                <div className='flex justify-center items-center'>
-                      <div className='border-2 rounded-full border-yellow-400'>
-                          <FaRegSmileWink onClick={handleEmojiShow} size={25} className='bg-yellow-400 rounded-full'/>
-                      </div>
+                <div className='flex justify-center items-center '>
+                          <FaRegSmile onClick={handleEmojiShow} size={30} className='bg-yellow-400 rounded-full'/>
+
                 </div>
                 <form className='flex justify-around items-center gap-4'>
-                      <input type="text" placeholder='Type Your Message Here' className='w-[50vw] h-4 p-4 rounded-xl'/>
-                      <button type="submit"><IoSend  size={25} className='text-white'/></button>
+                      <input type="text" placeholder='Type Your Message Here' className='w-[50vw] h-4 p-4 rounded-xl text-sm font-semibold font-serif'/>
+                      <button type="submit"><IoSend  size={30} className='text-white '/></button>
                 </form>
             </div>
         </div>
