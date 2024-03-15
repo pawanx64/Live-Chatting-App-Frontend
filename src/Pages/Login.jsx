@@ -3,29 +3,34 @@ import { Link,useNavigate} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 export const Login = () => {
     const [Email,setEmail]=useState('');
     const [Password,setPassword]=useState('');
     const navigate=useNavigate();
     const navitoHome=async(event)=>{
-        
         if(Email==='' || !Email.includes('@') || Password==='')
         {
-            toast('🦄 Wow so easy!', {
+            toast.error('Enter The Valid Email or Password', {
                 position: "top-center",
-                autoClose: 5000,
+                autoClose: 1000,
                 hideProgressBar: false,
                 closeOnClick: true,
-                pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
-                
+                theme: "dark",
             });
-        }
+        }    
         else{
-            navigate('/Home');
+            toast.success('You Have Login Successfully', {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            navigate('/Home')
         }
     }
 
@@ -33,7 +38,7 @@ export const Login = () => {
     <div className='bg-slate-700 h-screen'>
         <div className='flex justify-center items-center pt-48'>
             <section className='bg-white w-fit h-fit p-10 flex flex-col justify-center items-center text-center gap-4 rounded-3xl '>
-                <div>
+                <div>  
                     <h1 className='font-serif font-bold text-3xl text-purple-800'>Let's Chat</h1>
                 </div>
                 <div>
@@ -46,6 +51,18 @@ export const Login = () => {
                     <input type='password' value={Password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter The Password' className='w-56 p-2 '/>
                 </div>
                 <button onClick={navitoHome} className='bg-blue-800 p-3 w-56 rounded-xl hover:bg-fuchsia-950 text-white font-bold'>Sign In</button>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={500}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
                 <div>
                     <span className='text-base font-semibold'>You Don't Have An Account? </span>
                     <Link className='text-base font-semibold text-blue-700 hover:text-blue-950 hover:underline' to="/Register">
