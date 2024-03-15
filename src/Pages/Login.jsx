@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link,useNavigate} from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Login = () => {
+    const [Email,setEmail]=useState('');
+    const [Password,setPassword]=useState('');
     const navigate=useNavigate();
-    const navitoHome=()=>{
-        navigate('/Home');
+    const navitoHome=async(event)=>{
+        
+        if(Email==='' || !Email.includes('@') || Password==='')
+        {
+            toast('🦄 Wow so easy!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                
+            });
+        }
+        else{
+            navigate('/Home');
+        }
     }
 
   return (
@@ -19,10 +40,10 @@ export const Login = () => {
                     <h3 className='font-serif text-xl font-bold'>Login</h3>
                 </div>
                 <div>
-                    <input type='email' placeholder='Enter The Email' className='w-56 p-2'/>
+                    <input type='email' value={Email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter The Email' className='w-56 p-2'/>
                 </div>
                 <div>
-                    <input type='password' placeholder='Enter The Password' className='w-56 p-2 '/>
+                    <input type='password' value={Password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter The Password' className='w-56 p-2 '/>
                 </div>
                 <button onClick={navitoHome} className='bg-blue-800 p-3 w-56 rounded-xl hover:bg-fuchsia-950 text-white font-bold'>Sign In</button>
                 <div>
