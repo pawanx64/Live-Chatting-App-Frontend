@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { Link,useNavigate} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaRegEye,FaRegEyeSlash } from "react-icons/fa6";
 
 export const Login = () => {
     const [Email,setEmail]=useState('');
     const [Password,setPassword]=useState('');
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
     const navigate=useNavigate();
     const navitoHome=async(event)=>{
         if(Email==='' || !Email.includes('@') || Password==='')
@@ -34,6 +37,10 @@ export const Login = () => {
         }
     }
 
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(prevState => !prevState);
+      };
+
   return (
     <div className='bg-slate-700 h-screen'>
         <div className='flex justify-center items-center pt-48'>
@@ -47,8 +54,9 @@ export const Login = () => {
                 <div>
                     <input type='email' value={Email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter The Email' className='w-56 p-2'/>
                 </div>
-                <div>
-                    <input type='password' value={Password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter The Password' className='w-56 p-2 '/>
+                <div className='flex'>
+                    <input type={passwordVisible ? 'text' : 'password'} value={Password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter The Password' className='w-56 p-2 '/>
+                    <button onClick={togglePasswordVisibility}> {passwordVisible ?  <FaRegEyeSlash /> : <FaRegEye />  }</button>
                 </div>
                 <button onClick={navitoHome} className='bg-blue-800 p-3 w-56 rounded-xl hover:bg-fuchsia-950 text-white font-bold'>Sign In</button>
                 <ToastContainer
