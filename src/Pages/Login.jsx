@@ -52,7 +52,7 @@ export const Login = () => {
                     <h3 className='font-serif text-xl font-bold'>Login</h3>
                 </div>
                 <div>
-                    <input type='email' value={Email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter The Email' className='w-56 p-2'/>
+                    <input type='email' value={Email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter The Email' className='w-60 p-2'/>
                 </div>
                 <div className='flex'>
                     <input type={passwordVisible ? 'text' : 'password'} value={Password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter The Password' className='w-56 p-2 '/>

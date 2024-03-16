@@ -59,10 +59,10 @@ export const Register = () => {
                     <h3 className='font-serif text-xl font-bold'>Register</h3>
                 </div>
                 <div>
-                    <input type='text' value={Name} onChange={(event)=>setName(event.target.value)} placeholder='Enter Your Name' className='w-56 p-2'/>
+                    <input type='text' value={Name} onChange={(event)=>setName(event.target.value)} placeholder='Enter Your Name' className='w-60 p-2'/>
                 </div>
                 <div>
-                   <input type='email' value={Email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter The Email' className='w-56 p-2'/>
+                   <input type='email' value={Email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter The Email' className='w-60 p-2'/>
                 </div>
                 <div>
                     <input type={passwordVisible ? 'text' : 'password'} value={Password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter The Password' className='w-56 p-2'/>
